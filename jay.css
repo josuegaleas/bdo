@@ -1,0 +1,55 @@
+*
+{
+	font-family: Hack, monospace;
+}
+
+.outer
+{
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #dadada
+}
+
+.middle
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.inner
+{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title
+{
+	font-size: 3em;
+	color: #565d64;
+}
+
+/* Overriding some of Pure's styles */
+
+.pure-table
+{
+	border: 1px solid gray;
+}
+
+.pure-table td,
+.pure-table th
+{
+	border-left: 1px solid black;
+}
+
+.pure-table thead
+{
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.pure-table-bordered td
+{
+	border-bottom: 1px solid black;
+}
