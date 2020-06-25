@@ -1,6 +1,6 @@
 /*
  * Author: Josue Galeas
- * Last Edit: 2019.03.22
+ * Last Edit: 2020.06.24
  */
 
 var spawns = [];
@@ -30,8 +30,8 @@ spawns.push([new Date(Date.UTC(2018, 9, 24, 07, 00)), "Karanda"]);
 spawns.push([new Date(Date.UTC(2018, 9, 24, 10, 00)), "Maint."]);
 spawns.push([new Date(Date.UTC(2018, 9, 24, 14, 00)), "Karanda"]);
 spawns.push([new Date(Date.UTC(2018, 9, 24, 17, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 21, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 00, 00)), "Offin"]);
+spawns.push([new Date(Date.UTC(2018, 9, 24, 21, 00)), "Kutum/Offin"]);
+spawns.push([new Date(Date.UTC(2018, 9, 25, 00, 00)), "Vell"]);
 spawns.push([new Date(Date.UTC(2018, 9, 25, 03, 15)), "Karanda/Kzarka"]);
 spawns.push([new Date(Date.UTC(2018, 9, 25, 04, 15)), "Quint/Muraka"]);
 spawns.push([new Date(Date.UTC(2018, 9, 25, 05, 15)), "Nouver"]);
