@@ -1,116 +1,163 @@
 /*
  * Author: Josue Galeas
- * Last Edit: 2020.06.24
+ * Last Edit: 2023.10.06
  */
 
-var spawns = [];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-// Monday
-spawns.push([new Date(Date.UTC(2018, 9, 22, 07, 00)), "Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 10, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 14, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 17, 00)), "Offin"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 21, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 00, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 03, 15)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 04, 15)), ""]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 05, 15)), "Karanda"]);
-// Tuesday
-spawns.push([new Date(Date.UTC(2018, 9, 23, 07, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 10, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 14, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 17, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 23, 21, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 00, 00)), "Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 03, 15)), "Garmoth"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 04, 15)), ""]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 05, 15)), "Kutum/Kzarka"]);
-// Wednesday
-spawns.push([new Date(Date.UTC(2018, 9, 24, 07, 00)), "Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 10, 00)), "Maint."]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 14, 00)), "Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 17, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 24, 21, 00)), "Kutum/Offin"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 00, 00)), "Vell"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 03, 15)), "Karanda/Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 04, 15)), "Quint/Muraka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 05, 15)), "Nouver"]);
-// Thursday
-spawns.push([new Date(Date.UTC(2018, 9, 25, 07, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 10, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 14, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 17, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 25, 21, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 00, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 03, 15)), "Garmoth"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 04, 15)), ""]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 05, 15)), "Kzarka/Karanda"]);
-// Friday
-spawns.push([new Date(Date.UTC(2018, 9, 26, 07, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 10, 00)), "Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 14, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 17, 00)), "Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 26, 21, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 00, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 03, 15)), "Kutum/Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 04, 15)), ""]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 05, 15)), "Karanda"]);
-// Saturday
-spawns.push([new Date(Date.UTC(2018, 9, 27, 07, 00)), "Offin"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 10, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 14, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 17, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 27, 21, 00)), "Quint/Muraka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 28, 00, 00)), "Kzarka/Karanda"]);
-spawns.push([new Date(Date.UTC(2018, 9, 28, 03, 15)), "Conquest<br>War"]);
-spawns.push([new Date(Date.UTC(2018, 9, 28, 04, 15)), ""]);
-spawns.push([new Date(Date.UTC(2018, 9, 28, 05, 15)), "Nouver/Kutum"]);
-// Sunday
-spawns.push([new Date(Date.UTC(2018, 9, 21, 07, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 21, 10, 00)), "Kutum"]);
-spawns.push([new Date(Date.UTC(2018, 9, 21, 14, 00)), "Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 21, 17, 00)), "Kzarka"]);
-spawns.push([new Date(Date.UTC(2018, 9, 21, 21, 00)), "Vell"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 00, 00)), "Garmoth"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 03, 15)), "Kzarka/Nouver"]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 04, 15)), ""]);
-spawns.push([new Date(Date.UTC(2018, 9, 22, 05, 15)), "Kutum/Karanda"]);
+const colors = new Map
+([
+	["Kzarka", "#af0000"],
+	["Nouver", "#af8700"],
+	["Garmoth", "#afaf00"],
+	["Offin", "#00af00"],
+	["Vell", "#00afaf"],
+	["Karanda", "#005faf"],
+	["Kutum", "#8700af"],
+	["Quint", "#606060"],
+	["Muraka", "#606060"],
+	["-", "1c1c1c"],
+	["Black<br>Shadow", "#121212"],
+]);
 
-// Setting up two-dimensional array
-var data = new Array(7);
-for (i = 0; i < 7; i++)
+const data =
 {
-	data[i] = new Array(24);
-
-	for (j = 0; j < 24; j++)
-		data[i][j] = "No Boss";
+	"Monday":
+	[
+		{"date": "2018-10-22T07:00:00.000Z", "name": "Karanda"},
+		{"date": "2018-10-22T10:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-22T14:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-22T17:00:00.000Z", "name": "Offin"},
+		{"date": "2018-10-22T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-22T21:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-23T00:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-23T03:15:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-23T04:15:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-23T05:15:00.000Z", "name": "Karanda"}
+	],
+	"Tuesday":
+	[
+		{"date": "2018-10-23T07:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-23T10:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-23T14:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-23T17:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-23T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-23T21:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-24T00:00:00.000Z", "name": "Karanda"},
+		{"date": "2018-10-24T03:15:00.000Z", "name": "Quint/Muraka"},
+		{"date": "2018-10-24T04:15:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-24T05:15:00.000Z", "name": "Kzarka/Kutum"}
+	],
+	"Wednesday":
+	[
+		{"date": "2018-10-24T07:00:00.000Z", "name": "Karanda"},
+		{"date": "2018-10-24T10:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-24T14:00:00.000Z", "name": "Karanda"},
+		{"date": "2018-10-24T17:00:00.000Z", "name": "-"},
+		{"date": "2018-10-24T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-24T21:00:00.000Z", "name": "Kutum/Offin"},
+		{"date": "2018-10-25T00:00:00.000Z", "name": "Vell"},
+		{"date": "2018-10-25T03:15:00.000Z", "name": "Karanda/Kzarka"},
+		{"date": "2018-10-25T04:15:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-25T05:15:00.000Z", "name": "Nouver"}
+	],
+	"Thursday":
+	[
+		{"date": "2018-10-25T07:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-25T10:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-25T14:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-25T17:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-25T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-25T21:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-26T00:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-26T03:15:00.000Z", "name": "Quint/Muraka"},
+		{"date": "2018-10-26T04:15:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-26T05:15:00.000Z", "name": "Karanda/Kzarka"}
+	],
+	"Friday":
+	[
+		{"date": "2018-10-26T07:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-26T10:00:00.000Z", "name": "Karanda"},
+		{"date": "2018-10-26T14:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-26T17:00:00.000Z", "name": "Karanda"},
+		{"date": "2018-10-26T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-26T21:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-27T00:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-27T03:15:00.000Z", "name": "Kzarka/Kutum"},
+		{"date": "2018-10-27T04:15:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-27T05:15:00.000Z", "name": "Karanda"}
+	],
+	"Saturday":
+	[
+		{"date": "2018-10-27T07:00:00.000Z", "name": "Offin"},
+		{"date": "2018-10-27T10:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-27T14:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-27T17:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-27T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-27T21:00:00.000Z", "name": "Black<br>Shadow"},
+		{"date": "2018-10-28T00:00:00.000Z", "name": "Karanda/Kzarka"},
+		{"date": "2018-10-28T03:15:00.000Z", "name": "-"},
+		{"date": "2018-10-28T04:15:00.000Z", "name": "-"},
+		{"date": "2018-10-28T05:15:00.000Z", "name": "Nouver/Kutum"}
+	],
+	"Sunday":
+	[
+		{"date": "2018-10-21T07:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-21T10:00:00.000Z", "name": "Kutum"},
+		{"date": "2018-10-21T14:00:00.000Z", "name": "Nouver"},
+		{"date": "2018-10-21T17:00:00.000Z", "name": "Kzarka"},
+		{"date": "2018-10-21T19:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-21T21:00:00.000Z", "name": "Vell"},
+		{"date": "2018-10-22T00:00:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-22T03:15:00.000Z", "name": "Kzarka/Nouver"},
+		{"date": "2018-10-22T04:15:00.000Z", "name": "Garmoth"},
+		{"date": "2018-10-22T05:15:00.000Z", "name": "Karanda/Kutum"}
+	]
 }
 
-// Sorting spawn times by day and hour
-for (i = 0; i < spawns.length; i++)
+// Setting up table in HTML
+for (let i = 0; i < 10; i++)
+	document.getElementById("TimeRow").innerHTML += `<th id="Time${i}"></th>`
+
+for (let j = -6; j < 1; j++)
 {
-	var day = spawns[i][0].getDay();
-	var hour = spawns[i][0].getHours();
-	data[day][hour] = spawns[i];
+	var day = days.at(j)
+
+	document.getElementById("DayRows").innerHTML += `<tr id="${day}Row"></tr>`
+	document.getElementById(day + "Row").innerHTML += `<td>${day}</td>`
+
+	for (let i = 0; i < 10; i++)
+		document.getElementById(day + "Row").innerHTML += `<td id="${day}${i}"></td>`
 }
 
-// Map integer to English days
-var dayMap = [];
-dayMap[0] = "Sunday";
-dayMap[1] = "Monday";
-dayMap[2] = "Tuesday";
-dayMap[3] = "Wednesday";
-dayMap[4] = "Thursday";
-dayMap[5] = "Friday";
-dayMap[6] = "Saturday";
+// Setting up a two-dimensional array for spawn times
+var spawns = new Array(7);
 
-// Function that converts the given date to 24 hour and 12 hour formats
-function convertTime(date)
+for (let i = 0; i < 7; i++)
+{
+	spawns[i] = new Array(24);
+
+	for (let j = 0; j < 24; j++)
+		spawns[i][j] = "No Boss";
+}
+
+// Sorting spawn times into the array
+for (const day of days)
+	for (const spawn of data[day])
+	{
+		var date = new Date(spawn["date"]);
+		var d = date.getDay();
+		var h = date.getHours();
+		spawns[d][h] = [date, spawn["name"]];
+	}
+
+// Gets the 24-hour and 12-hour formatted times of the given date
+function getTimes(date)
 {
 	// Determining hour
 	var hour24 = date.getHours();
 	var hour12 = "?";
-	var ampm = "AM";
+	var ampm = "am";
 
 	if (hour24 == 0)
 		hour12 = "12";
@@ -120,7 +167,7 @@ function convertTime(date)
 		hour12 = hour24;
 
 	if (hour24 >= 12)
-		ampm = "PM";
+		ampm = "pm";
 
 	if (hour24 < 10)
 		hour24 = "0" + hour24;
@@ -137,74 +184,42 @@ function convertTime(date)
 	return [time24, time12];
 }
 
-// Function that gets the boss' color
-function getBossColor(boss)
-{
-	switch (boss)
-	{
-		case "Kzarka":
-			return "#df9f9f";
-		case "Nouver":
-			return "#dfbf9f";
-		case "Garmoth":
-			return "#dfdf9f";
-		case "Vell":
-		case "Quint":
-		case "Muraka":
-			return "#9fdf9f"
-		case "Offin":
-			return "#9fdfdf";
-		case "Karanda":
-			return "#9fbfdf";
-		case "Kutum":
-			return "#bf9fdf";
-		case "":
-			return "#bfbfbf";
-		default:
-			return "#dfdfdf";
-	}
-}
-
-// Function that looks for the next upcoming boss
+// Gets the next upcoming boss
 function checkUpNext(i, currentDay, currentHour, currentMinute)
 {
-	var boss = data[currentDay][i];
+	var boss = spawns[currentDay][i];
 
 	if (boss == "No Boss")
 		return false;
-	else if (boss[1] == "")
+	else if (boss[1] == "-")
 		return false;
 
 	if (i == currentHour)
 		if (currentMinute >= boss[0].getMinutes())
 			return false;
 
-	var times = convertTime(boss[0]);
-	var day = dayMap[boss[0].getDay()];
-
-	if (boss[1] == "Conquest<br>War")
-		var upNext = `Up next: Conquest War at ${times[0]}/${times[1]} on ${day}`;
-	else
-		var upNext = `Up next: ${boss[1]} at ${times[0]}/${times[1]} on ${day}`;
+	var times = getTimes(boss[0]);
+	var day = days[boss[0].getDay()];
+	var upNext = `Up next: ${boss[1]} at ${times[0]}/${times[1]} on ${day}`;
 
 	document.getElementById("upNext").innerHTML = upNext;
 	return true;
 }
 
 // Showing time zone
-var clock = new Date();
-var index = clock.toString().indexOf("GMT");
-var timeZone = clock.toString().slice(index);
-var currentTime = clock.toLocaleTimeString();
-var detected = `Detected: ${currentTime} - ${timeZone}`;
+const clock = new Date();
+const index = clock.toString().indexOf("GMT");
+const timeZone = clock.toString().slice(index);
+const currentTime = getTimes(clock);
+const detected = `Detected: ${currentTime[0]}/${currentTime[1]} - ${timeZone}`;
 document.getElementById("clock").innerHTML = detected;
 
-// Showing up next
+// Showing what boss is up next
 var currentDay = clock.getDay();
 var currentHour = clock.getHours();
 var currentMinute = clock.getMinutes();
 
-for (i = currentHour; i < 24; i++)
+for (let i = currentHour; i < 24; i++)
 	if (checkUpNext(i, currentDay, currentHour, currentMinute))
 		break;
 
@@ -215,52 +230,53 @@ if (document.getElementById("upNext").innerHTML == "Up next: ???")
 	else
 		currentDay++;
 
-	for (i = 0; i < 24; i++)
+	for (let i = 0; i < 24; i++)
 		if (checkUpNext(i, currentDay, currentHour, currentMinute))
 			break;
 }
 
+// Updating hour change notice if needed
+if (clock.getMonth() == 2 && clock.getDate() <= 21)
+	document.getElementById("hourChange").innerHTML = "Notice: After hour change in early March, spawns will occur ONE HOUR LATER until adjusted during the following maintenance"
+if (clock.getMonth() == 10 && clock.getDate() <= 14)
+	document.getElementById("hourChange").innerHTML = "Notice: After hour change in early November, spawns will occur ONE HOUR EARLIER until adjusted during the following maintenance"
+
 // Updating times in the table
-var count = 0;
-for (i = 0; i < 24; i++)
+for (let i = 0, count = 0; i < 24; i++)
 {
-	if (data[0][i] == "No Boss")
+	if (spawns[0][i] == "No Boss")
 		continue;
 
-	var times = convertTime(data[0][i][0]);
-	document.getElementById("time" + count).innerHTML = times[0] + "<br>" + times[1];
+	var times = getTimes(spawns[0][i][0]);
+	document.getElementById("Time" + count).innerHTML = times[0] + "<br>" + times[1];
 	count++;
 }
 
 // Updating bosses in the table
-for (j = 0; j < 7; j++)
+for (let j = 0; j < 7; j++)
 {
-	count = 0;
-	for (i = 0; i < 24; i++)
+	for (let i = 0, count = 0; i < 24; i++)
 	{
-		if (data[j][i] == "No Boss")
+		if (spawns[j][i] == "No Boss")
 			continue;
 
-		var bossName = data[j][i][1];
-		var index = bossName.indexOf("/");
+		var bossName = spawns[j][i][1];
 
-		// Determining color
-		if (index == -1)
-			var bossColor = getBossColor(bossName);
+		// Determining cell color
+		if (bossName.indexOf("/") == -1)
+			var bossColor = colors.get(bossName);
 		else
 		{
 			var bossNames = bossName.split("/");
-			var color1 = getBossColor(bossNames[0]);
-			var color2 = getBossColor(bossNames[1]);
+			var color1 = colors.get(bossNames[0]);
+			var color2 = colors.get(bossNames[1]);
 
-			var bossColor = "linear-gradient(to bottom, ";
-			bossColor += `${color1} 0%, ${color1} 49%, black 49%, `
-			bossColor += `black 51%, ${color2} 51%, ${color2} 100%)`;
+			var bossColor = `linear-gradient(to bottom, ${color1} 0%, ${color1} 50%, ${color2} 50%, ${color2} 100%)`;
 			bossName = bossNames[0] + "<br><br>" + bossNames[1];
 		}
 
-		document.getElementById(dayMap[j] + count).innerHTML = bossName;
-		document.getElementById(dayMap[j] + count).style.background = bossColor;
+		document.getElementById(days[j] + count).innerHTML = bossName;
+		document.getElementById(days[j] + count).style.background = bossColor;
 		count++;
 	}
 }

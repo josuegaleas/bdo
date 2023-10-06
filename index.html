@@ -6,7 +6,7 @@
 
 		<title>BDO World Boss Schedule for NA</title>
 
-		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css">
 		<link rel="stylesheet" href="jay.css">
 	</head>
@@ -17,122 +17,21 @@
 					<h1>BDO World Boss Schedule for NA</h1>
 					<p id="clock">ERROR: Could not get the current time, perhaps JavaScript is disabled?</p>
 					<i><p id="upNext">Up next: ???</p></i>
-					<!-- <p> -->
-					<!-- 	<b>Due to the hour change, boss spawns and node wars will occur ONE HOUR LATER</b><br> -->
-					<!-- 	<b>After maintenance on March 11th, the times will go back to normal</b> -->
-					<!-- </p> -->
+					<b><p id="hourChange"></p></b>
 
 					<table class="pure-table pure-table-bordered" align="center">
 						<thead>
-							<tr>
+							<tr id="TimeRow">
 								<th></th>
-								<th id="time0"></th>
-								<th id="time1"></th>
-								<th id="time2"></th>
-								<th id="time3"></th>
-								<th id="time4"></th>
-								<th id="time5"></th>
-								<th id="time6"></th>
-								<th id="time7"></th>
-								<th id="time8"></th>
 							</tr>
 						</thead>
 
-						<tbody>
-							<tr>
-								<td>Monday</td>
-								<td id="Monday0"></td>
-								<td id="Monday1"></td>
-								<td id="Monday2"></td>
-								<td id="Monday3"></td>
-								<td id="Monday4"></td>
-								<td id="Monday5"></td>
-								<td id="Monday6"></td>
-								<td id="Monday7"></td>
-								<td id="Monday8"></td>
-							</tr>
-
-							<tr>
-								<td>Tuesday</td>
-								<td id="Tuesday0"></td>
-								<td id="Tuesday1"></td>
-								<td id="Tuesday2"></td>
-								<td id="Tuesday3"></td>
-								<td id="Tuesday4"></td>
-								<td id="Tuesday5"></td>
-								<td id="Tuesday6"></td>
-								<td id="Tuesday7"></td>
-								<td id="Tuesday8"></td>
-							</tr>
-
-							<tr>
-								<td>Wednesday</td>
-								<td id="Wednesday0"></td>
-								<td id="Wednesday1"></td>
-								<td id="Wednesday2"></td>
-								<td id="Wednesday3"></td>
-								<td id="Wednesday4"></td>
-								<td id="Wednesday5"></td>
-								<td id="Wednesday6"></td>
-								<td id="Wednesday7"></td>
-								<td id="Wednesday8"></td>
-							</tr>
-
-							<tr>
-								<td>Thursday</td>
-								<td id="Thursday0"></td>
-								<td id="Thursday1"></td>
-								<td id="Thursday2"></td>
-								<td id="Thursday3"></td>
-								<td id="Thursday4"></td>
-								<td id="Thursday5"></td>
-								<td id="Thursday6"></td>
-								<td id="Thursday7"></td>
-								<td id="Thursday8"></td>
-							</tr>
-
-							<tr>
-								<td>Friday</td>
-								<td id="Friday0"></td>
-								<td id="Friday1"></td>
-								<td id="Friday2"></td>
-								<td id="Friday3"></td>
-								<td id="Friday4"></td>
-								<td id="Friday5"></td>
-								<td id="Friday6"></td>
-								<td id="Friday7"></td>
-								<td id="Friday8"></td>
-							</tr>
-
-							<tr>
-								<td>Saturday</td>
-								<td id="Saturday0"></td>
-								<td id="Saturday1"></td>
-								<td id="Saturday2"></td>
-								<td id="Saturday3"></td>
-								<td id="Saturday4"></td>
-								<td id="Saturday5"></td>
-								<td id="Saturday6"></td>
-								<td id="Saturday7"></td>
-								<td id="Saturday8"></td>
-							</tr>
-
-							<tr>
-								<td>Sunday</td>
-								<td id="Sunday0"></td>
-								<td id="Sunday1"></td>
-								<td id="Sunday2"></td>
-								<td id="Sunday3"></td>
-								<td id="Sunday4"></td>
-								<td id="Sunday5"></td>
-								<td id="Sunday6"></td>
-								<td id="Sunday7"></td>
-								<td id="Sunday8"></td>
-							</tr>
+						<tbody id="DayRows">
 						</tbody>
 					</table>
 
-					<p>Last updated on 2020.04.01: <a href="https://community.blackdesertonline.com/index.php?threads/world-boss-events-spawn-schedule-updated-on-01-04-2020.215712/">Forum Post</a></p>
+					<p>Last changed on 2023.08.30 (UTC)</p>
+					<p><a href="https://www.naeu.playblackdesert.com/en-US/Wiki?wikiNo=83">Official Source</a></p>
 				</div>
 			</div>
 		</div>
